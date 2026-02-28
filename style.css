@@ -909,7 +909,7 @@ body:has(a:hover) .cursor-ring {
   color: var(--text);
   line-height: 1.1;
   margin-top: 16px;
-  max-width: 600px;
+  max-width: 100%;
 }
 
 .map-container {
