@@ -311,7 +311,9 @@ body:has(a:hover) .cursor-ring {
   object-position: center;
   display: block;
   transform: scale(1.05);
-  transition: transform 0.8s var(--easing-expo), filter 0.8s ease;
+  transition:
+    transform 0.8s var(--easing-expo),
+    filter 0.8s ease;
   /* Make it permanently black and white as requested */
   filter: grayscale(100%) contrast(110%) brightness(1.2);
 }
@@ -985,6 +987,28 @@ body:has(a:hover) .cursor-ring {
   );
   border: 1px solid var(--border-light);
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-bounds {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-spacer {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .map-visual {
@@ -992,11 +1016,11 @@ body:has(a:hover) .cursor-ring {
   inset: 0;
   background-color: rgba(255, 255, 255, 0.25);
   mask-image: url("images/world-map.svg");
-  mask-size: contain;
+  mask-size: 100% 100%;
   mask-repeat: no-repeat;
   mask-position: center;
   -webkit-mask-image: url("images/world-map.svg");
-  -webkit-mask-size: contain;
+  -webkit-mask-size: 100% 100%;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
 }
